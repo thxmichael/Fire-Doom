@@ -1,6 +1,8 @@
+//1.0.1
+
 const firePixelsArray = [];
-const fireWidth = 100;
-const fireHeight = 60;
+const fireWidth = 40;
+const fireHeight = 30;
 const fireColorsPalette = [
   { r: 7, g: 7, b: 7 },
   { r: 31, g: 7, b: 7 },
@@ -74,7 +76,7 @@ function updateFireIntensityPerPixel(currentPixelIndex) {
     return;
   }
 
-  const decay = Math.floor(Math.random() * 3);
+  const decay = Math.floor(Math.random() * 5);
   const belowPixelFireIntensity = firePixelsArray[belowPixelIndex];
   const newFireIntensity =
     belowPixelFireIntensity - decay >= 0 ? belowPixelFireIntensity - decay : 0;

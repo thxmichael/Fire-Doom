@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&display=swap');
 
 * {
-    background-color: #a3954e;
+    background-color: rgb(163, 149, 78);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -30,7 +30,7 @@ td {
     border: 1px solid #000000;
     font-family: sans-serif;
     text-align: center;
-    font-size: 18px;
+    font-size: 10px;
     position: relative;
 }
 
@@ -46,4 +46,17 @@ td.pixel {
     font-size: 8px;
     top: 2px;
     right: 2px;
+}
+
+button {
+    border-radius: 10px;
+    padding: 3px;
+    border: 1px solid #000000;
+    background-color: rgb(196, 203, 134);
+    margin-top: 5px;
+    margin-left: 475px;
+}
+
+button:active {
+    transform: scale(0.95);
 }

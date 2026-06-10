@@ -2,7 +2,7 @@
 
 const firePixelsArray = [];
 const fireWidth = 40;
-const fireHeight = 30;
+const fireHeight = 31;
 const fireColorsPalette = [
   { r: 7, g: 7, b: 7 },
   { r: 31, g: 7, b: 7 },
@@ -40,8 +40,9 @@ const fireColorsPalette = [
   { r: 207, g: 207, b: 111 },
   { r: 223, g: 223, b: 159 },
   { r: 239, g: 239, b: 199 },
-  { r: 255, g: 255, b: 255 },
+  { r: 163, g: 149, b: 78 },
 ];
+let debug = false;
 
 function start() {
 
@@ -85,7 +86,9 @@ function updateFireIntensityPerPixel(currentPixelIndex) {
 }
 
 function renderFire() {
-    const debug = false;
+  document.getElementById("debug").addEventListener("click", () => {
+    debug = !debug;
+    })  
   let html = "<table colspacing=0 cellspacing=0>";
 
   for (let row = 0; row < fireHeight; row++) {

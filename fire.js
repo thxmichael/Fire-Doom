@@ -1,4 +1,4 @@
-//1.0.1
+//1.0.2 stable
 
 const firePixelsArray = [];
 const fireWidth = 40;
@@ -45,9 +45,11 @@ const fireColorsPalette = [
 let debug = false;
 
 function start() {
-
   createDataStructure();
   createFireSource();
+  document.getElementById("debug").addEventListener("click", () => {
+    debug = !debug;
+  });
   setInterval(calculateFirePropagation, 50);
 }
 
@@ -86,9 +88,6 @@ function updateFireIntensityPerPixel(currentPixelIndex) {
 }
 
 function renderFire() {
-  document.getElementById("debug").addEventListener("click", () => {
-    debug = !debug;
-    })  
   let html = "<table colspacing=0 cellspacing=0>";
 
   for (let row = 0; row < fireHeight; row++) {
@@ -103,13 +102,11 @@ function renderFire() {
         html += `<div class="pixelIndex">${pixelIndex}</div>`;
         html += fireIntensity;
         html += "</td>";
-      }
-      else {
-
+      } else {
         const color = fireColorsPalette[fireIntensity];
-        const colorString = `${color.r},${color.g},${color.b}`
-        html += `<td class="pixel" style="background-color: rgb(${colorString})">`
-        html += "</td>" 
+        const colorString = `${color.r},${color.g},${color.b}`;
+        html += `<td class="pixel" style="background-color: rgb(${colorString})">`;
+        html += "</td>";
       }
     }
   }
